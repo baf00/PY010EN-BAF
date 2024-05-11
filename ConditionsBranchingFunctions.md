@@ -144,10 +144,15 @@ for square in squares:
     sqiare     #print the square color
 
 squares=["red","yellow","green","purple","blue"]
-for i,square in enumerate(squares):
-    square
-    i
 
+for i,square in enumerate(squares):
+    print(i, square)
+
+
+How Does Enumerate() Work? Enumerate() is a built-in function of Python. 
+
+This function allows us to loop over something and have an automatic counter. 
+And this function works by adding a counter to an iterable and returning it in the form of an enumerate object.
 
 
 While - only runs if a condition is met
@@ -311,8 +316,13 @@ while rating >= 6:
     i=i+1
     rating = PlayListRatings[i]
 
+10
+9.5
+10
+8
+7.5
 
-313
+
 PlayListRatings = [10, 9.5, 10, 8, 7.5, 5, 10, 10]
 i = 0
 rating = PlayListRatings[0]
@@ -320,7 +330,162 @@ while(i < len(PlayListRatings) and rating >= 6):
     print(rating)
     i = i + 1 
     rating = PlayListRatings[i]   
+
+
+#13
+Write a while loop to display the values of the Rating of an album playlist stored in the list PlayListRatings. If the score is less than 6, exit the loop. The list PlayListRatings is given by: PlayListRatings = [10, 9.5, 10, 8, 7.5, 5, 10, 10]
+
+# Write your code below and press Shift+Enter to execute
+PlayListRatings = [10, 9.5, 10, 8, 7.5, 5, 10, 10]
+i=0
+rating=PlayListRatings[0]
+
+while rating >= 6:
+    print(rating)
+    i=i+1
+    rating = PlayListRatings[i]
+
+
+10
+9.5
+10
+8
+7.5
+
+
+Write a while loop to copy the strings 'orange' of the list squares to the list new_squares. Stop and exit the loop if the value on the list is not 'orange':
+
+squares = ['orange', 'orange', 'purple', 'blue ', 'orange']
+new_squares = []
+i=0;
+#print(len(squares))
+#print(i)
+while( (i < len(squares)) and (squares[i]=="orange")):
+    print(i)
+    print(squares[i])
+    new_squares.append('orange')
+    print(new_squares[i])
+    i = i + 1
+
+
+0
+orange
+orange
+1
+orange
+orange
+
+Some real-life problems!
+Your little brother has just learned multiplication tables in school. Today he has learned tables of 6 and 7. Help him memorise both the tables by printing them using for loop.
+
+# Write your code here
+i = 0
+number = 6
+for i in range(number):
+  print( number, " X ", i,  " = ",  number*i) 
+  i = i + 1
+
+number = 7
+for i in range(number):
+  print( number, " X ", i,  " = ",  number*i) 
+  i = i + 1
+
+
+6  X  0  =  0
+6  X  1  =  6
+6  X  2  =  12
+6  X  3  =  18
+6  X  4  =  24
+6  X  5  =  30
+7  X  0  =  0
+7  X  1  =  7
+7  X  2  =  14
+7  X  3  =  21
+7  X  4  =  28
+7  X  5  =  35
+7  X  6  =  42
+
+```python
+print("Multiplication table of 6:")
+for i in range (10):
+    print("6*",i,"=",6*i)
+print("Multiplication table of 7:")
+for i in range (10):
+    print("7*",i,"=",7*i)
     
+```
+
+</details>
+
+
+
+The following is a list of animals in a National Zoo. Animals = ["lion", "giraffe", "gorilla", "parrots", "crocodile","deer", "swan"]
+
+Your brother needs to write an essay on the animals whose names are made of 7 letters. Help him find those animals through a while loop and create a separate list of such animals.
+
+
+# Write your code here
+Animals = ["lion", "giraffe", "gorilla", "parrots", "crocodile","deer", "swan"]
+SevenAnimals=[]
+i = 0
+#print(len(Animals[2]))
+#print(len(Animals))
+      
+#while (i <= len(Animals)) and ((len(Animals[i])) == 7):
+while (i <= (len(Animals)-1)):
+    ThisAnimal = Animals[i]
+    print(ThisAnimal," at ", i)
+    if len(ThisAnimal) == 7:
+        print(Animals[i])
+        print(len(Animals[i]))
+        print(i)
+        SevenAnimals.append(Animals[i])
+    i = i + 1
+print(SevenAnimals)
+
+
+lion  at  0
+giraffe  at  1
+giraffe
+7
+1
+gorilla  at  2
+gorilla
+7
+2
+parrots  at  3
+parrots
+7
+3
+crocodile  at  4
+deer  at  5
+swan  at  6
+['giraffe', 'gorilla', 'parrots']
+
+
+With print statements commented out: 
+
+Animals = ["lion", "giraffe", "gorilla", "parrots", "crocodile","deer", "swan"]
+SevenAnimals=[]
+i = 0
+#print(len(Animals[2]))
+#print(len(Animals))
+      
+#while (i <= len(Animals)) and ((len(Animals[i])) == 7):
+while (i <= (len(Animals)-1)):
+    ThisAnimal = Animals[i]
+    #print(ThisAnimal," at ", i)
+    if len(ThisAnimal) == 7:
+        #print(Animals[i])
+        #print(len(Animals[i]))
+        #print(i)
+        SevenAnimals.append(Animals[i])
+    i = i + 1
+print(SevenAnimals)
+
+['giraffe', 'gorilla', 'parrots']
+
+
 
 If given one argument (e.g., range(11)), it generates a sequence starting from 0 up to (but not including) the given number.
 
