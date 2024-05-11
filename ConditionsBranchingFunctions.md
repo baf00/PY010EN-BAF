@@ -589,3 +589,567 @@ For Loops: Use for loops when you know the number of iterations in advance and w
 
 While Loops: Use while loops when you need to perform a task repeatedly as long as a certain condition holds true. While loops are particularly useful for situations where the number of iterations is uncertain or where you're waiting for a specific condition to be met.
     
+
+
+Video: Functions (13:31)
+
+Functions take an input and produce an output
+
+Pyhhon has many built-in funcitons like "len()"m ::sum()"
+
+Building functions in Python:
+"""
+add 1 to a      <=== documentation string 
+"""
+ def add1*a):
+     b=a+1
+    return b
+
+if you use help(add1) it will print out the doc string 
+
+def Mult(a,b):
+    c=a*b
+    return c
+
+
+mult(2,3)
+
+6
+
+
+def MJ():                            <== this function returns the special "none" opject
+    print( 'Michael Jackson')
+
+def NoWork():
+    pass
+print(NoWork()_
+
+None
+
+def printStuff(Stuff):
+    for i,s in enumerate(Stuff):
+
+    print("Album", i, "Rating is ", s)
+
+album_ratings - [10.0,8.5,9.5]
+printStuff(album_ratings)
+
+
+use the keyword "global" within a function to make a variable in the Global scope
+
+def PinkFloyd():
+    global ClaimedSales
+    ClaimedSales = "45 million"
+    return ClaimedSales
+
+
+PinkFloyd()
+print(ClaimedSales)
+45 million
+
+
+
+Exploring Python Functions
+Estimated time needed: 15 minutes
+
+Objectives:
+By the end of this reading, you should be able to:
+
+Describe the function concept and the importance of functions in programming
+Write a function that takes inputs and performs tasks
+Use built-in functions like len(), sum(), and others effectively
+Define and use your functions in Python
+Differentiate between global and local variable scopes
+Use loops within the function
+Modify data structures using functions
+
+
+def calculate_total(a, b):  # Parameters: a and b
+    total = a + b           # Task: Addition
+    return total            # Output: Sum of a and b
+
+result = calculate_total(5, 7)  # Calling the function with inputs 5 and 7
+print(result)  # Output: 12
+
+To use a built-in function, you simply call the function's name followed by parentheses. Any required arguments or parameters are passed into the function within these parentheses. The function then performs its predefined task and may return an output you can use in your code.
+
+Here are a few examples of commonly used built-in functions:
+
+len(): Calculates the length of a sequence or collection
+
+
+string_length = len("Hello, World!")  # Output: 13
+list_length = len([1, 2, 3, 4, 5])   # Output: 5
+Copied!
+sum(): Adds up the elements in an iterable (list, tuple, and so on)
+
+total = sum([10, 20, 30, 40, 50])  # Output: 150
+Copied!
+max(): Returns the maximum value in an iterable
+
+highest = max([5, 12, 8, 23, 16])  # Output: 23
+Copied!
+min(): Returns the minimum value in an iterable
+
+lowest = min([5, 12, 8, 23, 16])  # Output: 5
+
+
+Empty funtion
+
+def function_name():
+    pass
+
+
+def greet(name):
+    print("Hello, " + name)
+result = greet("Alice")
+print(result)  # Output: Hello, Alice
+
+Docstrings (Documentation Strings)
+Docstrings explain what a function does
+Placed inside triple quotes under the function definition
+Helps other developers understand your function
+Example:
+
+
+def multiply(a, b):
+    """
+    This function multiplies two numbers.
+    Input: a (number), b (number)
+    Output: Product of a and b
+    """
+    print(a * b)
+multiply(2,6)
+
+
+
+Return statement
+Return gives back a value from a function
+Ends the function's execution and sends the result
+A function can return various types of data
+Example:
+
+
+def add(a, b):
+    return a + b
+sum_result = add(3, 5)  # sum_result gets the value 8
+
+
+
+def print_numbers(limit):
+    for i in range(1, limit+1):
+        print(i)
+print_numbers(5)  # Output: 1 2 3 4 5
+
+
+def greet(name):
+    return "Hello, " + name
+for _ in range(3):
+    print(greet("Alice"))
+
+
+Modifying data structure using functions
+You'll use Python and a list as the data structure for this illustration. In this example, you will create functions to add and remove elements from a list.
+
+Part 1: Initialize an empty list
+1
+2
+# Define an empty list as the initial data structure
+my_list = []
+Copied!
+In this part, you start by creating an empty list named my_list. This empty list serves as the data structure that you will modify throughout the code.
+
+Part 2: Define a function to add elements
+1
+2
+3
+# Function to add an element to the list
+def add_element(data_structure, element):
+    data_structure.append(element)
+Copied!
+Here, you define a function called add_element. This function takes two parameters:
+
+data_structure: This parameter represents the list to which you want to add an element
+element: This parameter represents the element you want to add to the list
+Inside the function, you use the append method to add the provided element to the data_structure, which is assumed to be a list.
+
+Part 3: Define a function to remove elements
+
+# Function to remove an element from the list
+def remove_element(data_structure, element):
+    if element in data_structure:
+        data_structure.remove(element)
+    else:
+        print(f"{element} not found in the list.")
+Copied!
+In this part, you define another function called remove_element. It also takes two parameters:
+
+data_structure: The list from which we want to remove an element
+element: The element we want to remove from the list
+Inside the function, you use conditional statements to check if the element is present in the data_structure. If it is, you use the remove method to remove the first occurrence of the element. If it's not found, you print a message indicating that the element was not found in the list.
+
+Part 4: Add elements to the list
+
+# Add elements to the list using the add_element function
+add_element(my_list, 42)
+add_element(my_list, 17)
+add_element(my_list, 99)
+Copied!
+Here, you use the add_element function to add three elements (42, 17, and 99) to the my_list. These are added one at a time using function calls.
+
+Part 5: Print the current list
+
+# Print the current list
+print("Current list:", my_list)
+Copied!
+This part simply prints the current state of the my_list to the console, allowing us to see the elements that have been added so far.
+
+Part 6: Remove elements from the list
+
+# Remove an element from the list using the remove_element function
+remove_element(my_list, 17)
+remove_element(my_list, 55)  # This will print a message since 55 is not in the list
+Copied!
+In this part, you use the remove_element function to remove elements from the my_list. First, you attempt to remove 17 (which is in the list), and then you try to remove 55 (which is not in the list). The second call to remove_element will print a message indicating that 55 was not found.
+
+Part 7: Print the updated list
+
+# Print the updated list
+print("Updated list:", my_list)
+Copied!
+Finally, you print the updated my_list to the console. This allows us to observe the modifications made to the list by adding and removing elements using the defined functions.
+
+
+
+Functions in Python
+
+Functions
+What is a function?
+Variables
+Functions Make Things Simple
+Pre-defined functions
+Using if/else Statements and Loops in Functions
+Setting default argument values in your custom functions
+Global variables
+Scope of a Variable
+Collections and Functions
+Quiz on Loops
+
+
+You can define functions to provide the required functionality. Here are simple rules to define a function in Python:
+
+Functions blocks begin def followed by the function name and parentheses ().
+There are input parameters or arguments that should be placed within these parentheses.
+You can also define parameters inside these parentheses.
+There is a body within every function that starts with a colon (:) and is indented.
+You can also place documentation before the body.
+The statement return exits a function, optionally passing back a value.
+
+
+
+# First function example: Add 1 to a and store as b
+
+def add(a):
+    """
+    add 1 to a
+    """
+    b = a + 1
+    print(a, "if you add one", b)
+    return(b)
+
+# Function example
+
+def type_of_album(artist, album, year_released):
+    
+    print(artist, album, year_released)
+    if year_released > 1980:
+        return "Modern"
+    else:
+        return "Oldie"
+    
+x = type_of_album("Michael Jackson", "Thriller", 1980)
+print(x)
+
+
+
+# Print the list using for loop
+
+def PrintList(the_list):
+    for element in the_list:
+        print(element)
+
+
+#Compare Two Strings Directly using in operator
+# add string
+string= "Michael Jackson is the best"
+
+# Define a funtion
+def check_string(text):
+    
+# Use if else statement and 'in' operatore to compare the string
+    if text in string:
+        return 'String matched'
+    else:
+        return 'String not matched'
+
+check_string("Michael Jackson is the best")
+
+
+#Compare two strings using == operator and function
+def compareStrings(x, y):
+# Use if else statement to compare x and y
+    if x==y:
+        return 1
+    
+# Declare two different variables as string1 and string2 and pass string in it
+string1 = "Michael Jackson is the best"
+string2 = "Michael Jackson is the best"
+
+# Declare a variable to store result after comparing both the strings
+check = compareStrings(string1, string2)
+
+#Use if else statement to compare the string
+if check==1:
+    print("\nString Matched")
+else:
+    print("\nString not Matched")
+
+
+Count the Frequency of Words Appearing in a String Using a Dictionary.
+
+Find the count of occurence of any word in our string using python. This is what we are going to do in this section, count the number of word in a given string and print it.
+
+Lets suppose we have a ‘string’ and the ‘word’ and we need to find the count of occurence of this word in our string using python. This is what we are going to do in this section, count the number of word in a given string and print it.
+
+The first thing, we will do is define a function and and then create a list that will be empty initially.
+
+Next, we will add a code to convert the string to a list. Python string has a split() method. It takes a string and some separator to return a list.
+
+Now we will declare an empty dictionary.
+
+Next we will add code using for loop to iterate the words and value will will count the frequency of each words in the string and store them to the dictionary.
+
+Finally we will print the dictionary.
+
+
+# Python Program to Count words in a String using Dictionary
+def freq(string):
+    
+    #step1: A list variable is declared and initialized to an empty list.
+    words = []
+    
+    #step2: Break the string into list of words
+    words = string.split() # or string.lower().split()
+    
+    #step3: Declare a dictionary
+    Dict = {}
+    
+    #step4: Use for loop to iterate words and values to the dictionary
+    for key in words:
+        Dict[key] = words.count(key)
+        
+    #step5: Print the dictionary
+    print("The Frequency of words is:",Dict)
+    
+#step6: Call function and pass string in it
+freq("Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went \
+Everywhere that Mary went The lamb was sure to go")
+
+    
+
+Setting default argument values in your custom functions
+You can set a default value for arguments in your function. For example, in the isGoodRating() function, what if we wanted to create a threshold for what we consider to be a good rating? Perhaps by default, we should have a default rating of 4:
+
+# Example for setting param with default value
+
+def isGoodRating(rating=4): 
+    if(rating < 7):
+        print("this album sucks it's rating is",rating)
+        
+    else:
+        print("this album is good its rating is",rating)
+
+
+# Test the value with default value and with input
+
+isGoodRating()
+isGoodRating(10)
+
+
+Count the Frequency of Words Appearing in a String Using a Dictionary.
+
+Find the count of occurence of any word in our string using python. This is what we are going to do in this section, count the number of word in a given string and print it.
+
+Lets suppose we have a ‘string’ and the ‘word’ and we need to find the count of occurence of this word in our string using python. This is what we are going to do in this section, count the number of word in a given string and print it.
+
+The first thing, we will do is define a function and and then create a list that will be empty initially.
+
+Next, we will add a code to convert the string to a list. Python string has a split() method. It takes a string and some separator to return a list.
+
+Now we will declare an empty dictionary.
+
+Next we will add code using for loop to iterate the words and value will will count the frequency of each words in the string and store them to the dictionary.
+
+Finally we will print the dictionary.
+
+
+
+
+# Python Program to Count words in a String using Dictionary
+def freq(string):
+    
+    #step1: A list variable is declared and initialized to an empty list.
+    words = []
+    
+    #step2: Break the string into list of words
+    words = string.split() # or string.lower().split()
+    
+    #step3: Declare a dictionary
+    Dict = {}
+    
+    #step4: Use for loop to iterate words and values to the dictionary
+    for key in words:
+        Dict[key] = words.count(key)
+        
+    #step5: Print the dictionary
+    print("The Frequency of words is:",Dict)
+    
+#step6: Call function and pass string in it
+freq("Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went \
+Everywhere that Mary went The lamb was sure to go")
+
+
+
+The Frequency of words is: {'Mary': 6, 'had': 2, 'a': 2, 'little': 3, 'lamb': 3, 'Little': 1, 'lamb,': 1, 'lamb.Its': 1, 'fleece': 1, 'was': 2, 'white': 1, 'as': 1, 'snow': 1, 'And': 1, 'everywhere': 1, 'that': 2, 'went': 3, 'went,': 1, 'Everywhere': 1, 'The': 1, 'sure': 1, 'to': 1, 'go': 1}
+
+
+# Example of global variable
+
+myFavouriteBand = "AC/DC"
+
+def getBandRating(bandname):
+    if bandname == myFavouriteBand:
+        return 10.0
+    else:
+        return 0.0
+
+print("AC/DC's rating is:", getBandRating("AC/DC"))
+print("Deep Purple's rating is:",getBandRating("Deep Purple"))
+print("My favourite band is:", myFavouriteBand)
+
+
+AC/DC's rating is: 10.0
+Deep Purple's rating is: 0.0
+My favourite band is: AC/DC
+
+
+# Example of global variable and local variable with the same name
+
+myFavouriteBand = "AC/DC"
+
+def getBandRating(bandname):
+    myFavouriteBand = "Deep Purple"
+    if bandname == myFavouriteBand:
+        return 10.0
+    else:
+        return 0.0
+
+print("AC/DC's rating is:",getBandRating("AC/DC"))
+print("Deep Purple's rating is: ",getBandRating("Deep Purple"))
+print("My favourite band is:",myFavouriteBand)
+
+
+
+Collections and Functions¶
+When the number of arguments are unknown for a function, They can all be packed into a tuple as shown:
+
+def printAll(*args): # All the arguments are 'packed' into args which can be treated like a tuple
+    print("No of arguments:", len(args)) 
+    for argument in args:
+        print(argument)
+#printAll with 3 arguments
+printAll('Horsefeather','Adonis','Bone')
+#printAll with 4 arguments
+printAll('Sidecar','Long Island','Mudslide','Carriage')
+
+
+Similarly, The arguments can also be packed into a dictionary as shown:
+
+def printDictionary(**args):
+    for key in args:
+        print(key + " : " + args[key])
+
+printDictionary(Country='Canada',Province='Ontario',City='Toronto')
+
+
+Country : Canada
+Province : Ontario
+City : Toronto
+
+
+Functions can be incredibly powerful and versatile. They can accept (and return) data types, objects and even other functions as arguements. Consider the example below:
+
+def addItems(list):
+    list.append("Three")
+    list.append("Four")
+
+myList = ["One","Two"]
+
+addItems(myList)
+
+myList
+
+
+
+
+----
+
+Write a function code to find total count of word little in the given string: "Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went Everywhere that Mary went The lamb was sure to go"**
+
+# Write your code below and press Shift+Enter to execute
+poem = ("Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went Everywhere that Mary went The lamb was sure to go")
+words=[]
+i=0
+theword = "little"
+count=0
+
+words = poem.lower().split()
+#print(words[3])
+#print(words)
+for word in words:
+    #print(word)
+    #print("i =",i)
+    if word == theword:
+        count=count + 1
+    i = i +1
+print(count)
+
+
+-----
+
+Click here for the solution
+# Python Program to Count words in a String using Dictionary
+def freq(string,passedkey):
+
+    #step1: A list variable is declared and initialized to an empty list.
+    words = []
+
+    #step2: Break the string into list of words
+    words = string.split() # or string.lower().split()
+
+    #step3: Declare a dictionary
+    Dict = {}
+
+    #step4: Use for loop to iterate words and values to the dictionary
+    for key in words:
+        if(key == passedkey):
+            Dict[key] = words.count(key)   
+    #step5: Print the dictionary
+    print("Total Count:",Dict)
+
+#step6: Call function and pass string in it
+freq("Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went \
+Everywhere that Mary went The lamb was sure to go","little")
+    
+
+    
