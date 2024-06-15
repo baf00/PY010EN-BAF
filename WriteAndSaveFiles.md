@@ -196,6 +196,85 @@ In the following code block, Run the code as it is first and then run it with th
 
 
 
+
+
+'''
+The two arguments for this function are the files:
+    - currentMem: File containing list of current members
+    - exMem: File containing list of old members
+    
+    This function should remove all rows from currentMem containing 'no' 
+    in the 'Active' column and appends them to exMem.
+    '''
+def cleanFiles(currentMem, exMem):
+    # TODO: Open the currentMem file as in r+ mode
+    print("Start the program") 
+    with open(currentMem, 'r+') as currentMem:
+        #TODO: Open the exMem file in a+ mode
+        with open(exMem, 'a+') as exMem:
+        # Go to the beginning of the currentMem file
+            currentMem.seek(0,0) # move 0 bytes from beginning.
+            
+        #TODO: Read each member in the currentMem (1 member per row) file into a list.
+        #readlines(): The **readlines() **function reads all the lines from the text file and returns each line as a string element in a list.
+            
+        # Hint: Recall that the first line in the file is the header.
+        #start at the beginning of the files to let us write the header.
+            exMem.seek(0,0) 
+            currentMem.seek(0,0) 
+
+            
+        #print the header line and save it for use later, as debug warn if we get nothing
+            data = currentMem.readlines()
+            if ("Membership" in data[0]):   #debug to see if the first line we read is the header line
+                print('Got the header') 
+                header = data[0]
+                print(header)
+            else: 
+                print("line 1 isn't the header data\n",data[0])
+        #next look for members with 'no' in the active column
+        #print("member data follows:\n")  #debug to see if we can read the member data
+        
+            exMem.write(header)
+            currentMem.write(header)
+            
+            for line in data:
+                #print(line,end = "")  #print the lines without the extra newline
+                linelist = (line.split())
+                if linelist[2] == "no": 
+                    print("no ",line,end = "") #test print the no-member data 
+                    exMem.write(line)
+                else:
+                    currentMem.write(line)
+                    print("good member found", line)
+        #TODO: iterate through the members and create a new list of the innactive members
+            exMem.truncate()   #clean out the rest of the file data. 
+            currentMem.truncate()
+        # TODO: Iterate through the members list. 
+        # If a member is inactive, add them to exMem, otherwise write them into currentMem
+
+        
+    
+   pass # Remove this line when done implementation
+
+
+# The code below is to help you view the files.
+# Do not modify this code for this exercise.
+memReg = 'members.txt'
+exReg = 'inactive.txt'
+cleanFiles(memReg,exReg)
+
+
+headers = "Membership No  Date Joined  Active  \n"
+with open(memReg,'r') as readFile:
+    print("Active Members: \n\n")
+    print(readFile.read())
+    
+with open(exReg,'r') as readFile:
+    print("Inactive Members: \n\n")
+    print(readFile.read())
+
+
 with open('Example2.txt', 'r+') as testwritefile:
     data = testwritefile.readlines()
     testwritefile.seek(0,0) #write at beginning of file
