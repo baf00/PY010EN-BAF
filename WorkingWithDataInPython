@@ -1,0 +1,47 @@
+Working with Data in Python:
+    This module explains the basics of working with data in Python and begins the path with learning how to read and write files. 
+    Continue the module and uncover the best Python libraries that will aid in data manipulation and mathematical operations.
+
+Learning Objectives
+In this module you will learn about:
+- Explain how Pandas use data frames.
+- Use Pandas library for data analysis.
+- Read text files using Python libraries including "open" and "with".
+- Utilize NumPy to create one-dimensional and two-dimensional arrays.
+- Write and save files in Python.
+
+Then watch Video: Reading Files with Open (3:43)
+- use 'open'  to create a file object - parms filename and mode
+- file.name gives a string - filename
+- file.mode gives the current filemode
+- file.close() - close the file (unless using 'with" that closes the file automatically)
+- better to use the with statement because is automatically closes the file.
+- print(file_stuff)
+- use read to read lines of the file
+- readline - reads the file up to the newline char '\n'
+from stack overflow:
+   #The difference between file.read(), file.readline(), file.readlines()
+     file = open('samplefile', 'r')
+     single_string = file.read()    #Reads all the elements of the file 
+                                    #into a single string(\n characters might be included)
+     line = file.readline()         #Reads the current line where the cursor as a string 
+                                    #is positioned and moves to the next line
+     list_strings = file.readlines()#Makes a list of strings
+
+file_stuff=file1.readline(9) - reads 9 characters. 
+
+And then the hands-on lab on Reading Files in Python
+
+Objectives¶
+After completing this lab you will be able to:
+
+Read text files using Python libraries
+
+Table of Contents
+Download Data
+Reading Text Files
+A Better Way to Open a File
+
+Download Data
+
+
