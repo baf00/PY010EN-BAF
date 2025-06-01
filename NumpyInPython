@@ -78,4 +78,73 @@ Type
 If we check the type of the array we get numpy.ndarray:
 numpy.ndarray
 
+As numpy arrays contain data of the same type, we can use the attribute "dtype" to obtain the data type of the array's elecmens. In this case, it's 64-bit integer. 
+
+# Check the type of the values stored in numpy array
+
+a.dtype
+
+dtype('int32')
+
+Try it yourself
+Check the type of the array and Value type for the given array c
+
+b = np.array([3.1, 11.02, 6.2, 213.2, 5.2])
+
+# Enter your code here
+b.dtype
+
+dtype('float64')
+Click here for the solution
+type(b)
+    
+b.dtype 
+    
+If we examine the attribute dtype we see float 64, as the elements are not integers:
+
+Assign value
+We can change the value of the array. Consider the array c:
+
+# Create numpy array
+
+c = np.array([20, 1, 2, 3, 4])
+c
+
+array([20,  1,  2,  3,  4])
+
+We can change the first element of the array to 100 as follows:
+# Assign the first element to 100
+
+c[0] = 100
+c
+
+array([100,   1,   2,   3,   4])
+
+We can change the 5th element of the array to 0 as follows:
+
+# Assign the 5th element to 0
+
+c[4] = 0
+c
+
+array([100,   1,   2,   3,   0])
+
+Try it yourself
+Assign the value 20 for the second element in the given array.
+
+a = np.array([10, 2, 30, 40,50])
+
+# Enter your code here
+a[1] = 20
+a
+
+array([10, 20, 30, 40, 50])
+
+Click here for the solution
+a[1]=20
+a
+
+
+
+
 
