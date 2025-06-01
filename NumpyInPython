@@ -1,0 +1,81 @@
+edX - Skills Network Logo
+
+1D Numpy in Python¶
+Estimated time needed: 40 minutes
+
+Objectives
+After completing this lab you will be able to:
+
+Import and use the numpy library
+Perform operations with numpy
+
+Table of Contents
+
+What is Numpy?
+Type
+Assign Value
+Slicing
+Assign Value with List
+Other Attributes
+Numpy Array Operations
+Array Addition
+Array Multiplication
+Product of Two Numpy Arrays
+Dot Product
+Adding Constant to a Numpy Array
+Mathematical Functions
+Linspace
+
+
+What is Numpy?¶
+NumPy is a Python library used for working with arrays, linear algebra, fourier transform, and matrices. NumPy stands for Numerical Python and it is an open source project. The array object in NumPy is called ndarray, it provides a lot of supporting functions that make working with ndarray very easy.
+
+Arrays are very frequently used in data science, where speed and resources are very important.
+
+NumPy is usually imported under the np alias.
+
+It's usually fixed in size and each element is of the same type. We can cast a list to a numpy array by first importing numpy:
+
+# import numpy library
+
+import numpy as np 
+
+We then cast the list as follows:
+
+# Create a numpy array
+
+a = np.array([0, 1, 2, 3, 4])
+a
+array([0, 1, 2, 3, 4])
+
+Each element is of the same type, in this case integers:
+As with lists, we can access each element via a square bracket:
+
+# Print each element
+
+print("a[0]:", a[0])
+print("a[1]:", a[1])
+print("a[2]:", a[2])
+print("a[3]:", a[3])
+print("a[4]:", a[4])
+
+
+a[0]: 0
+a[1]: 1
+a[2]: 2
+a[3]: 3
+a[4]: 4
+
+Checking NumPy Version
+The version string is stored under version attribute.
+
+print(np.__version__)
+
+1.26.4
+
+Type
+
+If we check the type of the array we get numpy.ndarray:
+numpy.ndarray
+
+
